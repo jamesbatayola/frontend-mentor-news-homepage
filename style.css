@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+	font-family: "Inter", sans-serif;
+	line-height: 1.7rem;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	/* ! */
+	align-items: start;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+input,
+button {
+	font: inherit;
+}
+
+:root {
+	/* --------------------------- */
+	--Soft-orange: hsl(35, 77%, 62%);
+	--Soft-red: hsl(5, 85%, 63%);
+	/* --------------------------- */
+	--Off-white: hsl(36, 100%, 99%);
+	--Grayish-blue: hsl(233, 8%, 79%);
+	--Dark-grayish-blue: hsl(236, 13%, 42%);
+	--Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* ==================================================== */
+
+.container {
+	padding: 0 1rem 5rem 1rem;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-block: 2rem;
+	justify-content: space-between;
+}
+
+nav .nav-logo-icon {
+	width: 44px;
+}
+
+nav .nav-menu-icon {
+	width: 40px;
+	cursor: pointer;
+}
+
+main {
+	display: grid;
+	gap: 4rem;
+}
+
+header {
+	display: grid;
+	gap: 1.5rem;
+}
+
+header h1 {
+	font-size: 2.7rem;
+	font-weight: 800;
+	line-height: 3rem;
+}
+
+header .header-info {
+	display: grid;
+	gap: 1.5rem;
+}
+
+header .header-info p {
+	color: var(--Dark-grayish-blue);
+}
+
+header a {
+	width: 50%;
+	color: white;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	padding-block: 0.6rem;
+	letter-spacing: 0.2rem;
+	background-color: var(--Very-dark-blue);
+	text-transform: uppercase;
+}
+
+header a:hover {
+	background-color: var(--Soft-red);
+}
+
+/* ========================================= */
+
+aside {
+	padding: 2rem 1.5rem 0 1.5rem;
+	background-color: var(--Very-dark-blue);
+	color: white;
+}
+
+aside .aside-box {
+	margin-block: 1.8rem;
+}
+
+aside hr {
+	border: none;
+	border-top: 1px solid var(--Dark-grayish-blue);
+	/* width: 100%; */
+}
+
+aside h2 {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	color: var(--Soft-orange);
+}
+
+aside h3 {
+	font-size: 1.3rem;
+	margin-bottom: 0.6rem;
+	color: var(--Off-white);
+}
+
+aside p {
+	text-wrap: pretty;
+	color: var(--Grayish-blue);
+}
+
+/* ========================================= */
+
+article {
+	display: grid;
+	gap: 2rem;
+}
+
+article img {
+	height: 8.5rem;
+}
+
+article .article-box {
+	display: flex;
+	gap: 1.5rem;
+}
+
+article .article-box .article-info {
+	display: grid;
+	gap: 0.5rem;
+	align-content: start;
+	padding-block: 0.3rem;
+}
+
+article .article-box .article-info h2 {
+	font-size: 2.4rem;
+	margin-bottom: 0.5rem;
+	color: var(--Grayish-blue);
+}
+
+article .article-box .article-info h3 {
+	font-size: 1.15rem;
+	font-weight: 800;
+}
+
+/* ========================================= */
+
+.dropdown {
+	top: 0;
+	right: 0;
+	opacity: 0;
+	width: 65vw;
+	height: 100vh;
+	position: fixed;
+	pointer-events: none;
+	background-color: white;
+	border: 1px solid black;
+}
+
+/* .nav-menu-icon:active + .dropdown {
+	opacity: 1;
+	pointer-events: auto;
+} */
+
+.dropdown-close-icon {
+	width: 30px;
+}
