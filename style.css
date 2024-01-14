@@ -21,8 +21,6 @@
 body {
 	min-height: 100vh;
 	display: flex;
-	/* ! */
-	/* align-items: start; */
 }
 
 img,
@@ -50,6 +48,13 @@ button {
 
 /* ==================================================== */
 
+body,
+nav,
+.container,
+.dropdown {
+	background-color: var(--Off-white);
+}
+
 .container {
 	padding: 0 1rem 2rem 1rem;
 	min-width: 375px;
@@ -59,7 +64,6 @@ nav {
 	top: 0;
 	display: flex;
 	position: sticky;
-	z-index: auto;
 	align-items: center;
 	padding-block: 1.85rem;
 	justify-content: center;
@@ -75,12 +79,6 @@ nav .nav-menu-icon {
 	width: 40px;
 	cursor: pointer;
 }
-
-/* main {
-	margin-bottom: 4rem;
-	display: grid;
-	gap: 4rem;
-} */
 
 header {
 	display: grid;
@@ -284,6 +282,11 @@ aside p {
 		max-width: 1100px;
 	}
 
+	nav,
+	.dropdown {
+		background-color: var(--Off-white);
+	}
+
 	nav {
 		display: flex;
 		position: static;
@@ -341,8 +344,8 @@ aside p {
 	main {
 		gap: 1.5rem;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 200px 150px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr 1fr 150px;
 		grid-template-areas:
 			"header header aside"
 			"header header aside"
