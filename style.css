@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 *,
 *::before,
 *::after {
@@ -260,6 +264,10 @@ aside p {
 	width: 30px;
 }
 
+.attribution {
+	display: none;
+}
+
 /*! ============== MEDIAQUERY ============== */
 
 @media screen and (min-width: 700px) {
@@ -361,5 +369,20 @@ aside p {
 	aside {
 		grid-area: aside;
 		margin-bottom: 4rem;
+	}
+
+	.attribution {
+		display: block;
+		left: 50%;
+		bottom: 1px;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+
+	.attribution,
+	a {
+		font-size: 0.8rem;
+		text-wrap: nowrap;
+		color: rgba(0, 0, 0, 0.767);
 	}
 }
