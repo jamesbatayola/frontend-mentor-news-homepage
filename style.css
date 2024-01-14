@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 
 *,
 *::before,
@@ -48,14 +48,19 @@ button {
 
 .container {
 	padding: 0 1rem 5rem 1rem;
+	min-width: 375px;
 }
 
 nav {
+	top: 0;
 	display: flex;
-	justify-content: center;
+	position: sticky;
+	z-index: auto;
 	align-items: center;
-	padding-block: 2rem;
+	padding-block: 1.85rem;
+	justify-content: center;
 	justify-content: space-between;
+	background-color: var(--Off-white);
 }
 
 nav .nav-logo-icon {
@@ -181,41 +186,93 @@ article .article-box .article-info h3 {
 
 .dropdown {
 	top: 0;
-	right: -20px;
 	opacity: 0;
+	gap: 4.5rem;
 	width: 65vw;
+	right: -20px;
+	display: grid;
 	height: 100vh;
 	position: fixed;
+	justify-items: end;
 	pointer-events: none;
-	background-color: white;
+	padding: 2rem 1rem;
+	align-content: start;
 	transition: all 200ms;
+	z-index: 5;
+	background-color: white;
 }
 
 .nav-menu-icon.active + .dropdown {
 	right: 0;
 	opacity: 1;
-	z-index: 3;
 	pointer-events: auto;
+}
+
+.dropdown-background {
+	left: 0;
+	top: 0;
+	opacity: 0;
+	width: 100%;
+	min-height: 100vh;
+	cursor: none;
+	position: fixed;
+	min-height: 100vh;
+	pointer-events: none;
+	background-color: black;
+}
+
+.dropdown-background.active {
+	z-index: 1;
+	opacity: 0.5;
+	pointer-events: auto;
+}
+
+.menu-list {
+	gap: 0rem;
+	width: 100%;
+	display: grid;
+	font-weight: 600;
+}
+
+.menu-list a {
+	font-size: 16px;
+}
+
+.menu-list .option {
+	transition: 25ms;
+	padding: 0.7rem 10px;
+}
+
+.menu-list .option:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.05);
 }
 
 .dropdown-close-icon {
+	cursor: pointer;
+	text-align: end;
 	width: 30px;
 }
 
-.dropdown-inactive {
-	top: 0;
-	z-index: 2;
-	opacity: 0;
-	width: 100%;
-	height: 100vh;
-	position: absolute;
-	background-color: black;
-	transition: all 200ms;
-	pointer-events: none;
-}
+/*! ============== MEDIAQUERY ============== */
 
-.dropdown-active {
-	opacity: 0.6;
-	pointer-events: auto;
-	/* pointer-events: auto; */
+@media screen and (min-width: 700px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 50px 1fr 250px 150px;
+		grid-template-areas: "nav nav nav" "illu illu aside" "heading header-info aside" "article article article";
+	}
+	nav {
+		position: static;
+		grid-area: nav;
+	}
+	.main-illu {
+		grid-area: illu;
+	}
 }
