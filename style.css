@@ -18,7 +18,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	/* ! */
-	align-items: start;
+	/* align-items: start; */
 }
 
 img,
@@ -47,7 +47,7 @@ button {
 /* ==================================================== */
 
 .container {
-	padding: 0 1rem 5rem 1rem;
+	padding: 0 1rem 2rem 1rem;
 	min-width: 375px;
 }
 
@@ -72,14 +72,16 @@ nav .nav-menu-icon {
 	cursor: pointer;
 }
 
-main {
+/* main {
+	margin-bottom: 4rem;
 	display: grid;
 	gap: 4rem;
-}
+} */
 
 header {
 	display: grid;
 	gap: 1.5rem;
+	margin-bottom: 4rem;
 }
 
 header h1 {
@@ -92,21 +94,26 @@ header .header-info {
 	display: grid;
 	gap: 1.5rem;
 }
-
+header .header-info .description {
+	display: grid;
+	gap: 1.5rem;
+}
 header .header-info p {
+	text-wrap: pretty;
 	color: var(--Dark-grayish-blue);
 }
 
 header a {
 	width: 50%;
 	color: white;
+	cursor: pointer;
 	font-weight: 400;
 	text-align: center;
 	text-decoration: none;
 	padding-block: 0.6rem;
 	letter-spacing: 0.2rem;
-	background-color: var(--Very-dark-blue);
 	text-transform: uppercase;
+	background-color: var(--Very-dark-blue);
 }
 
 header a:hover {
@@ -116,7 +123,8 @@ header a:hover {
 /* ========================================= */
 
 aside {
-	padding: 2rem 1.5rem 0 1.5rem;
+	margin-bottom: 4rem;
+	padding: 2rem 1.5rem 0.2rem 1.5rem;
 	background-color: var(--Very-dark-blue);
 	color: white;
 }
@@ -150,38 +158,36 @@ aside p {
 
 /* ========================================= */
 
-article {
-	display: grid;
-	gap: 2rem;
-}
-
-article img {
-	height: 8.5rem;
-}
-
-article .article-box {
-	display: flex;
+.article-box {
 	gap: 1.5rem;
+	display: flex;
+	cursor: pointer;
+	margin-bottom: 2rem;
 }
 
-article .article-box .article-info {
+.article-box img {
+	height: 8rem;
+}
+
+.article-box .article-info {
 	display: grid;
 	gap: 0.5rem;
 	align-content: start;
-	padding-block: 0.3rem;
 }
 
-article .article-box .article-info h2 {
+.article-box .article-info h2 {
 	font-size: 2.4rem;
 	margin-bottom: 0.5rem;
 	color: var(--Grayish-blue);
 }
 
-article .article-box .article-info h3 {
+.article-box .article-info h3 {
 	font-size: 1.15rem;
 	font-weight: 800;
 }
-
+.article-box .article-info p {
+	color: var(--Dark-grayish-blue);
+}
 /* ========================================= */
 
 .dropdown {
@@ -264,33 +270,96 @@ article .article-box .article-info h3 {
 	}
 
 	.container {
+		/* padding-block: 2rem; */
 		display: grid;
-		max-width: 1200px;
+		min-width: 1100px;
+		max-width: 1100px;
 	}
+
+	nav {
+		display: flex;
+		position: static;
+		align-items: center;
+		margin-bottom: 1rem;
+		padding-block: 1.4rem;
+		justify-content: space-between;
+	}
+
+	nav .dropdown {
+		gap: 0;
+		padding: 0;
+		opacity: 1;
+		width: 100%;
+		height: 50px;
+		display: flex;
+		position: static;
+		flex-direction: row;
+		justify-content: end;
+		align-items: center;
+		pointer-events: auto;
+	}
+
+	nav .menu-list {
+		width: 50%;
+		display: flex;
+		text-align: end;
+		align-items: end;
+		justify-content: end;
+	}
+
+	nav .menu-list .option {
+		padding: 0 0;
+		cursor: pointer;
+		text-align: end;
+		margin-left: 2.1rem;
+		color: var(--Dark-grayish-blue);
+	}
+
+	nav .menu-list .option:hover {
+		color: black;
+		background-color: white;
+	}
+
+	nav .nav-menu-icon {
+		display: none;
+		position: absolute;
+	}
+
+	nav .dropdown-close-icon {
+		position: absolute;
+		display: none;
+	}
+
 	main {
+		gap: 1.5rem;
 		display: grid;
-		gap: 2rem;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 200px 150px;
 		grid-template-areas:
 			"header header aside"
 			"header header aside"
-			"article article article";
-		border: 1px solid black;
+			"articleOne articleTwo article";
 	}
 	header {
+		gap: 2rem;
+		display: grid;
 		grid-area: header;
 	}
 
+	header h1 {
+		font-size: 3.5rem;
+		text-wrap: balance;
+		line-height: 3.5rem;
+	}
+
 	header .header-info {
-		display: flex;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	aside {
 		grid-area: aside;
-	}
-	article {
-		display: flex;
-		grid-area: article;
+		margin-bottom: 4rem;
 	}
 }
