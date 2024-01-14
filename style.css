@@ -262,17 +262,35 @@ article .article-box .article-info h3 {
 		justify-content: center;
 		align-items: center;
 	}
+
 	.container {
 		display: grid;
+		max-width: 1200px;
+	}
+	main {
+		display: grid;
+		gap: 2rem;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 50px 1fr 250px 150px;
-		grid-template-areas: "nav nav nav" "illu illu aside" "heading header-info aside" "article article article";
+		grid-template-rows: 1fr 200px 150px;
+		grid-template-areas:
+			"header header aside"
+			"header header aside"
+			"article article article";
+		border: 1px solid black;
 	}
-	nav {
-		position: static;
-		grid-area: nav;
+	header {
+		grid-area: header;
 	}
-	.main-illu {
-		grid-area: illu;
+
+	header .header-info {
+		display: flex;
+	}
+
+	aside {
+		grid-area: aside;
+	}
+	article {
+		display: flex;
+		grid-area: article;
 	}
 }
