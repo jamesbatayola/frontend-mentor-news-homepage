@@ -72,7 +72,7 @@ nav {
 }
 
 nav .nav-logo-icon {
-	width: 44px;
+	width: 50px;
 }
 
 nav .nav-menu-icon {
@@ -217,13 +217,13 @@ aside p {
 }
 
 .dropdown-background {
-	left: 0;
 	top: 0;
+	left: 0;
 	opacity: 0;
 	width: 100%;
-	min-height: 100vh;
 	cursor: none;
 	position: fixed;
+	min-height: 100vh;
 	min-height: 100vh;
 	pointer-events: none;
 	background-color: black;
@@ -272,7 +272,7 @@ aside p {
 	body {
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: end;
 	}
 
 	.container {
@@ -280,6 +280,7 @@ aside p {
 		display: grid;
 		min-width: 1100px;
 		max-width: 1100px;
+		margin-bottom: 2rem;
 	}
 
 	nav,
